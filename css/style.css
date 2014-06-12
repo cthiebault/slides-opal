@@ -1,0 +1,36 @@
+section table {
+  width: 100%;
+}
+
+section table.center td {
+  text-align: center !important;
+}
+
+section table.center-middle td {
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+section table.col-2 td {
+  width: 50%;
+}
+
+img.w500 {
+  width: 500px;
+}
+
+img.w450 {
+  width: 450px;
+}
+
+img.w300 {
+  width: 300px;
+}
+
+img.w700 {
+  width: 700px;
+}
+
+.img-rounded {
+  border-radius: 6px;
+}

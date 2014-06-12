@@ -1,0 +1,19 @@
+{
+  "name": "slides-opal",
+  "version": "0.1.0",
+  "homepage": "https://github.com/cthiebault/slides-opal",
+  "authors": [
+    "Cedric Thiebault <cedric.thiebault@gmail.com>"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reveal.js": "~2.6.2"
+  }
+}
