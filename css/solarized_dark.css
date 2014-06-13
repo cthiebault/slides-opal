@@ -1,9 +1,11 @@
-/*  @import url(http://fonts.googleapis.com/css?family=Fauna+One|Fjalla+One); */
 /**
+ * Copied from http://iviewsource.com/presentations/bootstrap3
+ *
  * Solarized Dark theme for reveal.js.
  * Author: Achim Staebler
  */
 
+/*  @import url(http://fonts.googleapis.com/css?family=Fauna+One|Fjalla+One); */
 html * {
   color-profile: sRGB;
   rendering-intent: auto; }
@@ -43,7 +45,7 @@ body {
   text-shadow: none; }
 
 .reveal h1 {
-  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); 
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
   color: #B58916;
   font-size: 2.5em;
 }
