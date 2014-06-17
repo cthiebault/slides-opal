@@ -10,7 +10,6 @@ p.top {
   margin-top: 2em;
 }
 
-
 section table {
   width: 100%;
 }
@@ -49,5 +48,5 @@ img.w700 {
 }
 
 section img {
-  border-radius: 6px; 
+  border-radius: 6px;
 }
