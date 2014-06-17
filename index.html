@@ -19,14 +19,19 @@
 
     <section>
       <h1>Opal</h1>
+      <br/>
+      <img src="img/obiba.png"/>
+      <br/>
+      <br/>
+      <a href="https://github.com/obiba/opal" target="_blank">https://github.com/obiba/opal</a>
     </section>
 
     <section>
       <h1>Base de données</h1>
 
       <ul class="top">
-        <li >Etudes épidémiologiques</li>
-        <li >Biobanques</li>
+        <li>Etudes épidémiologiques</li>
+        <li>Biobanques</li>
       </ul>
 
       <aside class="notes">
@@ -46,6 +51,7 @@
             <ul>
               <li class="fragment fade-in">Sources multiple</li>
               <li class="fragment fade-in">Données hétérogènes</li>
+              <li class="fragment fade-in">Normalise le format des data &amp; metadata</li>
             </ul>
           </td>
         </tr>
@@ -58,27 +64,27 @@
 
     <section>
       <h2>Projet (datasource)</h2>
-      <img src="img/opal-projects.png" />
+      <img src="img/opal-projects.png"/>
     </section>
 
     <section>
       <h2>Tables</h2>
-      <img src="img/opal-tables.png" />
+      <img src="img/opal-tables.png"/>
     </section>
 
     <section>
       <h2>Variables</h2>
-      <img src="img/opal-variables.png" />
+      <img src="img/opal-variables.png"/>
     </section>
 
     <section>
       <h2>Catégories et attributs</h2>
-      <img src="img/opal-variable-detail.png" />
+      <img src="img/opal-variable-detail.png"/>
     </section>
 
     <section>
       <h2>Données</h2>
-      <img src="img/opal-values.png" />
+      <img src="img/opal-values.png"/>
       <aside class="notes">
         - value set --> read all data (export, indexation)
         - vecteur --> statistiques
@@ -87,7 +93,7 @@
 
     <section>
       <h2>Vue &amp; variables dérivées</h2>
-      <img src="img/opal-derived.png" />
+      <img src="img/opal-derived.png"/>
     </section>
 
     <section>
@@ -95,7 +101,12 @@
     </section>
 
     <section>
-      <h2>Identifiants</h2>
+      <h2>Confidentialité des participants</h2>
+      <img src="img/opal-ids.jpg"/>
+      <ul>
+        <li class="fragment fade-in">ID internes</li>
+        <li class="fragment fade-in">Nouvelles ID pour chaque organisation qui accède aux données</li>
+      </ul>
     </section>
 
     <section>
@@ -115,7 +126,7 @@
 
     <section>
       <h3>Hibernate (EAV)</h3>
-      <img src="img/hibernate.png" />
+      <img src="img/hibernate.png"/>
       <ul>
         <li class="fragment fade-in">Transactions</li>
         <li class="fragment fade-in">Implementation complexe</li>
@@ -124,7 +135,7 @@
 
     <section>
       <h3>MongoDB</h3>
-      <img src="img/mongodb.jpg" />
+      <img src="img/mongodb.jpg"/>
       <ul>
         <li class="fragment fade-in">Pas de transactions</li>
         <li class="fragment fade-in">Implementation ultra simple</li>
@@ -149,9 +160,6 @@
         </tr>
       </table>
       <p>Import / Export</p>
-      <aside class="notes">
-        - Utilisé pour importer/exporter les donnnées
-      </aside>
     </section>
 
     <section>
@@ -250,8 +258,7 @@
         rest:/datasource/datasource_1/table/table_1/variables:POST:GET/*
         rest:/datasource/datasource_1/table/table_1/variables:DELETE:GET
         rest:/datasource/datasource_1/table/table_1/variables:GET:GET/GET
-        rest:/datasource/datasource_1/table/table_1/variable:GET:GET/GET
-      </code></pre>
+        rest:/datasource/datasource_1/table/table_1/variable:GET:GET/GET</code></pre>
       <aside class="notes">
         - ACL sur chaque item serait trop lent
       </aside>
