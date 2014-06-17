@@ -37,8 +37,7 @@
         1. Shiro
         1. Spatial realm
         1. Confidantialité
-            1. Identifiants
-            1. Keystore
+            1. Anonymisation des identifiants
     1. ElasticSearch
         1. Recherche
         1. Statistiques & aggrégations
@@ -48,6 +47,3 @@
 1. ? Le futur ?
     1. Spring Batch
 1. Essayez
-
-
-

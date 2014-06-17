@@ -45,9 +45,9 @@
     </section>
 
     <section>
-      <h1>Metadonnées</h1>
-      <ul>
-        <li class="fragment fade-in">Project</li>
+      <h2>Metadonnées</h2>
+      <ul class="top">
+        <li class="fragment fade-in">Datasource (projet)</li>
         <li class="fragment fade-in">Tables</li>
         <li class="fragment fade-in">Variables</li>
         <li class="fragment fade-in">Catégories</li>
@@ -57,44 +57,66 @@
     </section>
 
     <section>
-      <h1>Données</h1>
-      <ul>
+      <h2>Données</h2>
+      <ul class="top">
         <li class="fragment fade-in">Value Set</li>
-        <li class="fragment fade-in">Vector</li>
+        <li class="fragment fade-in">Vecteur</li>
       </ul>
+      <aside class="notes">
+        - value set --> read all data (export, indexation)
+        - vecteur --> statistiques
+      </aside>      
     </section>
 
     <section>
-      <h1>Identifiants</h1>
+      <h2>Diagramme</h2>
+      TODO
     </section>
 
     <section>
-      <h1>Implementations des datasources</h1>
+      <h2>Identifiants</h2>
     </section>
 
     <section>
-      <h1>Plain JDBC (DB existantes)</h1>
+      <h2>Implementations des datasources</h2>
     </section>
 
     <section>
-      <h1>Hibernate (EAV)</h1>
+      <h3>Plain JDBC (DB existantes)</h3>
+
+      <aside class="notes">
+        - limitation du nombre de variables (car nb colonnes limité)
+      </aside>   
     </section>
 
     <section>
-      <h1>MongoDB</h1>
+      <h3>Hibernate (EAV)</h3>
     </section>
 
     <section>
-      <h1>Web Services</h1>
+      <h3>MongoDB</h3>
+      <aside class="notes">
+        - On perd les transactions
+      </aside>   
     </section>
 
     <section>
-      <h1>CSV, XML</h1>
+      <h3>Web Services</h3>
+      <aside class="notes">
+        - Permet d'importer depuis un autre Opal
+      </aside>   
+    </section>
+
+    <section>
+      <h3>CSV, XML</h3>
+      <aside class="notes">
+        - Utilisé pour importer/exporter les donnnées
+      </aside>         
     </section>
 
     <section>
       <h1>Architecture Clients / Serveur</h1>
-      <ul>
+      <ul class="top">
         <li class="fragment fade-in">Serveur REST</li>
         <li class="fragment fade-in">Client GWT</li>
         <li class="fragment fade-in">Client Python</li>
@@ -102,6 +124,8 @@
       </ul>
       <aside class="notes">
         - GWT: GWTP + Bootstrap (LESS)
+        - Python: script d'automatisation
+        - R: DataShield
       </aside>
     </section>
 
@@ -110,43 +134,93 @@
     </section>
 
     <section>
-      <h1>Package Debian</h1>
+      <h2>Package Debian</h2>
+      <img src="img/debian.jpg" />
+      <aside class="notes">
+        - Simplifie l'installation et les mises à jour
+        - Gestion des dependances comme MongoDB, Daemon, etc...
+      </aside>      
     </section>
 
     <section>
-      <h1>Jetty embarqué</h1>
-      <p class="top">
-        Avant Spring Boot ;-)
-      </p>
+      <h2>Jetty embarqué</h2>
+      <img src="img/jetty.png" />
+      <p>Avant Spring Boot ;-)</p>
+      <aside class="notes">
+        - Maitre de notre config
+        - Pas de conflit avec un autre war sous le servlet container
+      </aside>         
     </section>
 
     <section>
-      <h1>Base de données document embarquée</h1>
-      <p class="top">
-        OrientDB
-      </p>
+      <h2>Base de données document embarquée</h2>
+      <img src="img/orientdb.png" />
+      <aside class="notes">
+        - A l'origine: Hibernate avec HSQLDB
+        - Documents plus facile à gérer que des relations SQL sous Hibernate
+        - MongoDB ne s'embarque pas --> OrientDB
+      </aside>         
     </section>
 
     <section>
-      <h1>API REST</h1>
-      <ul>
-        <li class="fragment fade-in">JAX RS</li>
-        <li class="fragment fade-in">Protobuf</li>
+      <h2>API REST</h2>
+      <ul class="top">
+        <li class="fragment fade-in">JAX RS (RestEasy)</li>
+        <li class="fragment fade-in">Protocol Buffers</li>
         <li class="fragment fade-in">Documentation de l'API (Swagger)</li>
       </ul>
+      <aside class="notes">
+        - Protobuf: format binaire et DTO polyglothe
+      </aside>         
     </section>
 
     <section>
-      <h1>Sécurité</h1>
-      <ul>
-        <li class="fragment fade-in">Shiro</li>
-        <li class="fragment fade-in">Spatial realm</li>
-        <li class="fragment fade-in">Confidentialité et anonymisation</li>
-      </ul>
+      <h2>Sécurité</h2>
+      <table class="center-middle">
+        <tr>
+          <td>
+            <br/>
+            <img src="img/shiro.jpg" class="w300" />
+          </td>
+          <td>
+            <ul>
+              <li class="fragment fade-in">Authentication</li>
+              <li class="fragment fade-in">Authorization</li>
+              <li class="fragment fade-in">Cryptography</li>
+              <li class="fragment fade-in">Session management</li>
+            </ul>
+          </td>
+        </tr>
+      </table>    
     </section>
 
     <section>
-      <h1>Elastic Search</h1>
+      <h2>Spatial realm</h2>
+      <br/><br/>
+      <pre><code data-trim>
+        [{domain}:]{uri}:{action}:{parent-action}/{children-action}
+      </code></pre>
+      <br/>
+      <br/>
+      <p>Persmission EDIT_TABLE</p>
+      <pre><code data-trim>rest:/datasource/datasource_1/table/table_1:PUT:GET
+rest:/datasource/datasource_1/table/table_1:GET:GET
+rest:/datasource/datasource_1/table/table_1/variables:POST:GET/*
+rest:/datasource/datasource_1/table/table_1/variables:DELETE:GET
+rest:/datasource/datasource_1/table/table_1/variables:GET:GET/GET
+rest:/datasource/datasource_1/table/table_1/variable:GET:GET/GET
+      </code></pre>
+      <aside class="notes">
+        - ACL sur chaque item serait trop lent
+      </aside>  
+    </section>
+
+    <section>
+      <h2>Confidentialité et anonymisation</h2>
+    </section>
+
+    <section>
+      <h2>Elastic Search</h2>
       <ul>
         <li class="fragment fade-in">Cluster</li>
         <li class="fragment fade-in">Statistiques</li>
@@ -155,7 +229,7 @@
     </section>
 
     <section>
-      <h1>Vues & Variables dérivées</h1>
+      <h2>Vues et Variables dérivées</h2>
       <ul>
         <li class="fragment fade-in">Javascript (Rhino)</li>
         <li class="fragment fade-in">Versions (Git)</li>
@@ -182,9 +256,18 @@
 <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
 <script src="bower_components/reveal.js/js/reveal.min.js"></script>
 <script>
-  Reveal.initialize({
-    history: true
-//    transition: 'linear'
+  Reveal.initialize(
+    {
+      dependencies: [
+        { 
+          // Syntax highlight for <code> elements
+          src: 'bower_components/reveal.js/plugin/highlight/highlight.js', 
+          async: true, 
+          callback: function() { hljs.initHighlightingOnLoad(); } 
+        }
+      ],
+      history: true
+//      transition: 'linear'
   });
 </script>
 

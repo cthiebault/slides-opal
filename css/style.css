@@ -1,4 +1,4 @@
-.reveal ul {
+.reveal ul.top {
   margin-top: 1em;
 }
 
@@ -46,4 +46,8 @@ img.w700 {
 
 .img-rounded {
   border-radius: 6px;
+}
+
+section img {
+  border-radius: 6px; 
 }
