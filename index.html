@@ -26,288 +26,321 @@
       <a href="https://github.com/obiba/opal" target="_blank">https://github.com/obiba/opal</a>
     </section>
 
+
     <section>
-      <h1>Base de données</h1>
 
-      <ul class="top">
-        <li>Etudes épidémiologiques</li>
-        <li>Biobanques</li>
-      </ul>
+      <section>
+        <h1>Qu'est ce que c'est ?</h1>
+      </section>
 
-      <aside class="notes">
-        - données sur les participants
-      </aside>
+      <section>
+        <h1>Base de données</h1>
+        <ul class="top">
+          <li>Etudes épidémiologiques</li>
+          <li>Biobanques</li>
+        </ul>
+        <aside class="notes">
+          - données sur les participants
+        </aside>
+      </section>
+
+      <section>
+        <h1>Collecte des données</h1>
+        <img src="img/opal-flow.png" class="w500"/>
+        <ul>
+          <li class="fragment fade-in">Sources multiple</li>
+          <li class="fragment fade-in">Données hétérogènes</li>
+          <li class="fragment fade-in">Normalise le format des data &amp; metadata</li>
+        </ul>
+      </section>
+
     </section>
 
     <section>
-      <h1>Collecte des données</h1>
-      <img src="img/opal-flow.png" class="w500"/>
-      <ul>
-        <li class="fragment fade-in">Sources multiple</li>
-        <li class="fragment fade-in">Données hétérogènes</li>
-        <li class="fragment fade-in">Normalise le format des data &amp; metadata</li>
-      </ul>
+
+      <section>
+        <h1>Modèle</h1>
+      </section>
+
+      <section>
+        <h2>Projet (datasource)</h2>
+        <img src="img/opal-projects.png"/>
+      </section>
+
+      <section>
+        <h2>Tables</h2>
+        <img src="img/opal-tables.png"/>
+      </section>
+
+      <section>
+        <h2>Variables</h2>
+        <img src="img/opal-variables.png"/>
+      </section>
+
+      <section>
+        <h2>Catégories et attributs</h2>
+        <img src="img/opal-variable-detail.png"/>
+      </section>
+
+      <section>
+        <h2>Données</h2>
+        <img src="img/opal-values.png"/>
+        <aside class="notes">
+          - value set --> read all data (export, indexation)
+          - vecteur --> statistiques
+        </aside>
+      </section>
+
+      <section>
+        <h2>Statistiques</h2>
+        <img src="img/opal-stats.png"/>
+        <aside class="notes">
+          - cached
+        </aside>
+      </section>
+
+      <section>
+        <h2>Vue &amp; variables dérivées</h2>
+        <img src="img/opal-derived.png"/>
+      </section>
+
+      <section>
+        <h2>Database</h2>
+        <img src="img/opal-db.png"/>
+        <ul>
+          <li class="fragment fade-in">Un projet persiste dans une seule BD</li>
+          <li class="fragment fade-in">Une BD peut stocker plusieurs projets</li>
+        </ul>
+      </section>
+
     </section>
 
     <section>
-      <h1>Modèle</h1>
+
+      <section>
+        <h1>Implémentation des datasources</h1>
+      </section>
+
+      <section>
+        <h3>Plain SQL</h3>
+        <ul class="top">
+          <li class="fragment fade-in">BD existante</li>
+          <li class="fragment fade-in">Limité</li>
+        </ul>
+        <aside class="notes">
+          - limitation du nombre de variables (car nb colonnes limité)
+        </aside>
+      </section>
+
+      <section>
+        <img src="img/hibernate.png"/>
+        <ul>
+          <li class="fragment fade-in">Entity-attribute-value (EAV)</li>
+          <li class="fragment fade-in">Transactions</li>
+          <li class="fragment fade-in">Implémentation complexe</li>
+        </ul>
+      </section>
+
+      <section>
+        <img src="img/mongodb.jpg"/>
+        <ul>
+          <li class="fragment fade-in">Implémentation très simple</li>
+          <li class="fragment fade-in">Meilleur gestion des binaires</li>
+          <li class="fragment fade-in">Scalable</li>
+          <li class="fragment fade-in">Mais... pas de transactions</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Web Services</h3>
+        <ul>
+          <li class="fragment fade-in">Opal <--> Opal</li>
+          <li class="fragment fade-in">Import / Export</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Fichiers</h3>
+        <table class="center-middle">
+          <tr>
+            <td><img src="img/csv.png"/></td>
+            <td><img src="img/xml.png"/></td>
+          </tr>
+        </table>
+        <p>Import / Export</p>
+      </section>
+
     </section>
 
     <section>
-      <h2>Projet (datasource)</h2>
-      <img src="img/opal-projects.png"/>
+
+      <section>
+        <h1>Architecture Clients / Serveur</h1>
+      </section>
+
+      <section>
+        TODO diagramme
+        <ul class="top">
+          <li class="fragment fade-in">Serveur REST</li>
+          <li class="fragment fade-in">Client GWT</li>
+          <li class="fragment fade-in">Client Python</li>
+          <li class="fragment fade-in">Client R</li>
+        </ul>
+        <aside class="notes">
+          - GWT: GWTP + Bootstrap (LESS)
+          - Python: script d'automatisation
+          - R: DataShield
+        </aside>
+      </section>
+
     </section>
 
     <section>
-      <h2>Tables</h2>
-      <img src="img/opal-tables.png"/>
-    </section>
 
-    <section>
-      <h2>Variables</h2>
-      <img src="img/opal-variables.png"/>
-    </section>
+      <section>
+        <h1>Architecture Serveur</h1>
+      </section>
 
-    <section>
-      <h2>Catégories et attributs</h2>
-      <img src="img/opal-variable-detail.png"/>
-    </section>
+      <section>
+        <h2>Package Debian</h2>
+        <img src="img/debian.jpg"/>
+        <aside class="notes">
+          - Simplifie l'installation et les mises à jour
+          - Gestion des dependances comme MongoDB, Daemon, etc...
+        </aside>
+      </section>
 
-    <section>
-      <h2>Données</h2>
-      <img src="img/opal-values.png"/>
-      <aside class="notes">
-        - value set --> read all data (export, indexation)
-        - vecteur --> statistiques
-      </aside>
-    </section>
+      <section>
+        <h2>Jetty embarqué</h2>
+        <img src="img/jetty.png"/>
 
-    <section>
-      <h2>Statistiques</h2>
-      <img src="img/opal-stats.png"/>
-      <aside class="notes">
-        - cached
-      </aside>
-    </section>
+        <p>Avant Spring Boot ;-)</p>
+        <aside class="notes">
+          - Maitre de notre config
+          - Pas de conflit avec un autre war sous le servlet container
+        </aside>
+      </section>
 
-    <section>
-      <h2>Vue &amp; variables dérivées</h2>
-      <img src="img/opal-derived.png"/>
-    </section>
+      <section>
+        <h2>Base de données document embarquée</h2>
+        <img src="img/orientdb.png"/>
+        <aside class="notes">
+          - A l'origine: Hibernate avec HSQLDB
+          - Documents plus facile à gérer que des relations SQL sous Hibernate
+          - MongoDB ne s'embarque pas --> OrientDB
+        </aside>
+      </section>
 
-    <section>
-      <h2>Confidentialité des participants</h2>
-      <img src="img/opal-ids.jpg"/>
-      <ul>
-        <li class="fragment fade-in">ID internes</li>
-        <li class="fragment fade-in">Nouvelles ID pour chaque organisation qui accède aux données</li>
-      </ul>
-    </section>
+      <section>
+        <h2>API REST</h2>
+        <ul class="top">
+          <li class="fragment fade-in">JAX RS (RestEasy)</li>
+          <li class="fragment fade-in">Protocol Buffers</li>
+          <li class="fragment fade-in">Documentation de l'API (Swagger)</li>
+        </ul>
+        <aside class="notes">
+          - Protobuf: format binaire et DTO polyglothe
+        </aside>
+      </section>
 
-    <section>
-      <h2>Persistance</h2>
-      <img src="img/opal-db.png"/>
-      <ul>
-        <li class="fragment fade-in">Un projet persiste dans une seule BD</li>
-        <li class="fragment fade-in">Une BD peut stocker plusieurs projets</li>
-      </ul>
-    </section>
+      <section>
+        <h2>Sécurité</h2>
+        <table class="center-middle">
+          <tr>
+            <td>
+              <br/>
+              <img src="img/shiro.jpg" class="w300"/>
+            </td>
+            <td>
+              <ul>
+                <li class="fragment fade-in">Authentication</li>
+                <li class="fragment fade-in">Authorization</li>
+                <li class="fragment fade-in">Cryptography</li>
+                <li class="fragment fade-in">Session management</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+        <aside class="notes">
+          - Decrypte lors de l'import de Onyx
+          - We don't use Servlet Session but Shiro Sessions
+        </aside>
+      </section>
 
-    <section>
-      <h3>Plain SQL</h3>
-      <ul class="top">
-        <li class="fragment fade-in">BD existante</li>
-        <li class="fragment fade-in">Limité</li>
-      </ul>
-      <aside class="notes">
-        - limitation du nombre de variables (car nb colonnes limité)
-      </aside>
-    </section>
+      <section>
+        <h2>Confidentialité des participants</h2>
+        <img src="img/opal-ids.jpg"/>
+        <ul>
+          <li class="fragment fade-in">ID internes</li>
+          <li class="fragment fade-in">Nouvelles ID pour chaque organisation qui accède aux données</li>
+        </ul>
+      </section>
 
-    <section>
-      <img src="img/hibernate.png"/>
-      <ul>
-        <li class="fragment fade-in">Entity-attribute-value (EAV)</li>
-        <li class="fragment fade-in">Transactions</li>
-        <li class="fragment fade-in">Implémentation complexe</li>
-      </ul>
-    </section>
+      <section>
+        <h2>Spatial realm</h2>
+        <br/>
+        <pre><code data-trim>{domain}:{uri}:{permission}:{parent-permission}/{children-permission}</code></pre>
 
-    <section>
-      <img src="img/mongodb.jpg"/>
-      <ul>
-        <li class="fragment fade-in">Implémentation très simple</li>
-        <li class="fragment fade-in">Meilleur gestion des binaires</li>
-        <li class="fragment fade-in">Scalable</li>
-        <li class="fragment fade-in">Mais... pas de transactions</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>Web Services</h3>
-      <ul>
-        <li class="fragment fade-in">Opal <--> Opal</li>
-        <li class="fragment fade-in">Import / Export</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>Fichiers</h3>
-      <table class="center-middle">
-        <tr>
-          <td><img src="img/csv.png"/></td>
-          <td><img src="img/xml.png"/></td>
-        </tr>
-      </table>
-      <p>Import / Export</p>
-    </section>
-
-    <section>
-      <h1>Architecture Clients / Serveur</h1>
-      <ul class="top">
-        <li class="fragment fade-in">Serveur REST</li>
-        <li class="fragment fade-in">Client GWT</li>
-        <li class="fragment fade-in">Client Python</li>
-        <li class="fragment fade-in">Client R</li>
-      </ul>
-      <aside class="notes">
-        - GWT: GWTP + Bootstrap (LESS)
-        - Python: script d'automatisation
-        - R: DataShield
-      </aside>
-    </section>
-
-    <section>
-      <h1>Architecture Serveur</h1>
-    </section>
-
-    <section>
-      <h2>Package Debian</h2>
-      <img src="img/debian.jpg"/>
-      <aside class="notes">
-        - Simplifie l'installation et les mises à jour
-        - Gestion des dependances comme MongoDB, Daemon, etc...
-      </aside>
-    </section>
-
-    <section>
-      <h2>Jetty embarqué</h2>
-      <img src="img/jetty.png"/>
-
-      <p>Avant Spring Boot ;-)</p>
-      <aside class="notes">
-        - Maitre de notre config
-        - Pas de conflit avec un autre war sous le servlet container
-      </aside>
-    </section>
-
-    <section>
-      <h2>Base de données document embarquée</h2>
-      <img src="img/orientdb.png"/>
-      <aside class="notes">
-        - A l'origine: Hibernate avec HSQLDB
-        - Documents plus facile à gérer que des relations SQL sous Hibernate
-        - MongoDB ne s'embarque pas --> OrientDB
-      </aside>
-    </section>
-
-    <section>
-      <h2>API REST</h2>
-      <ul class="top">
-        <li class="fragment fade-in">JAX RS (RestEasy)</li>
-        <li class="fragment fade-in">Protocol Buffers</li>
-        <li class="fragment fade-in">Documentation de l'API (Swagger)</li>
-      </ul>
-      <aside class="notes">
-        - Protobuf: format binaire et DTO polyglothe
-      </aside>
-    </section>
-
-    <section>
-      <h2>Sécurité</h2>
-      <table class="center-middle">
-        <tr>
-          <td>
+        <div class="fragment fade-in">
+          <p>
             <br/>
-            <img src="img/shiro.jpg" class="w300"/>
-          </td>
-          <td>
-            <ul>
-              <li class="fragment fade-in">Authentication</li>
-              <li class="fragment fade-in">Authorization</li>
-              <li class="fragment fade-in">Cryptography</li>
-              <li class="fragment fade-in">Session management</li>
-            </ul>
-          </td>
-        </tr>
-      </table>
-      <aside class="notes">
-        - Decrypte lors de l'import de Onyx
-        - We don't use Servlet Session but Shiro Sessions
-      </aside>
-    </section>
-
-    <section>
-      <h2>Spatial realm</h2>
-      <br/>
-      <pre><code data-trim>{domain}:{uri}:{permission}:{parent-permission}/{children-permission}</code></pre>
-
-      <div class="fragment fade-in">
-        <p>
-          <br/>
-          TABLE_ALL permission:
-       </p>
-       <pre><code data-trim>opal:/datasource/datasource_1/table/table_1:ALL</code></pre>
-        <pre><code data-trim>rest:/datasource/datasource_1/table/table_1:*:GET/*</code></pre>
-      </div>
-      <div class="fragment fade-in">
-        <p>
-          <br/>
-          EDIT_VARIABLES permission:
-        </p>
-        <pre><code data-trim>opal:/datasource/datasource_1/table/table_1:EDIT_VARIABLES</code></pre>
+            TABLE_ALL permission:
+          </p>
+          <pre><code data-trim>opal:/datasource/datasource_1/table/table_1:ALL</code></pre>
+          <pre><code data-trim>rest:/datasource/datasource_1/table/table_1:*:GET/*</code></pre>
+        </div>
+        <div class="fragment fade-in">
+          <p>
+            <br/>
+            EDIT_VARIABLES permission:
+          </p>
+          <pre><code data-trim>opal:/datasource/datasource_1/table/table_1:EDIT_VARIABLES</code></pre>
         <pre><code data-trim>rest:/datasource/datasource_1/table/table_1:*:GET
-rest:/datasource/datasource_1/table/table_1/variables:GET:GET/*
-// so this permission won't be granted
-// rest:/datasource/datasource_1/table/table_1/valuesets</code></pre>
-      </div>
-      <aside class="notes">
-        - ACL sur chaque item serait trop lent
-      </aside>
+          rest:/datasource/datasource_1/table/table_1/variables:GET:GET/*
+          // so this permission won't be granted
+          // rest:/datasource/datasource_1/table/table_1/valuesets</code></pre>
+        </div>
+        <aside class="notes">
+          - ACL sur chaque item serait trop lent
+        </aside>
+      </section>
+
+      <section>
+        <h2>Elastic Search</h2>
+        <table class="center-middle">
+          <tr>
+            <td>
+              <br/>
+              <img src="img/elasticsearch.png"/>
+            </td>
+            <td>
+              <ul>
+                <li class="fragment fade-in">Rechercher</li>
+                <li class="fragment fade-in">Facets / Aggrégations</li>
+                <li class="fragment fade-in">Cluster</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>Vues et Variables dérivées</h2>
+        <img src="img/opal-script.png"/>
+        <table class="center-middle">
+          <tr>
+            <td><img src="img/rhino.jpg" class="fragment fade-in w300"/></td>
+            <td><img src="img/git-red.png" class="fragment fade-in w300"/></td>
+          </tr>
+        </table>
+      </section>
+
     </section>
 
     <section>
-      <h2>Elastic Search</h2>
-      <table class="center-middle">
-        <tr>
-          <td>
-            <br/>
-            <img src="img/elasticsearch.png"/>
-          </td>
-          <td>
-            <ul>
-              <li class="fragment fade-in">Cluster</li>
-              <li class="fragment fade-in">Facets / Aggrégations</li>
-              <li class="fragment fade-in">Statistiques</li>
-            </ul>
-          </td>
-        </tr>
-      </table>
-    </section>
-
-    <section>
-      <h2>Vues et Variables dérivées</h2>
-      <img src="img/opal-script.png"/>
-      <table class="center-middle">
-        <tr>
-          <td><img src="img/rhino.jpg" class="fragment fade-in w300"/></td>
-          <td><img src="img/git-red.png" class="fragment fade-in w300"/></td>
-        </tr>
-      </table>
-    </section>
-
-    <section>
-      <h1><a href="http://demo.obiba.org:8080/" target="_blank">Essayez Opal</a></h1>
+      <h1>Essayez Opal</h1>
+      <br/>
+      <p><a href="http://demo.obiba.org:8080/" target="_blank">http://demo.obiba.org:8080</a></p>
       <br/>
       <ul>
         <li><b>Username:</b> administrator</li>
