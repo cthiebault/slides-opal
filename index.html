@@ -83,6 +83,14 @@
     </section>
 
     <section>
+      <h2>Statistiques</h2>
+      <img src="img/opal-stats.png"/>
+      <aside class="notes">
+        - cached
+      </aside>
+    </section>
+
+    <section>
       <h2>Vue &amp; variables dérivées</h2>
       <img src="img/opal-derived.png"/>
     </section>
@@ -97,7 +105,12 @@
     </section>
 
     <section>
-      <h2>Implementations des datasources</h2>
+      <h2>Persistance</h2>
+      <img src="img/opal-db.png"/>
+      <ul>
+        <li class="fragment fade-in">Un projet persiste dans une seule BD</li>
+        <li class="fragment fade-in">Une BD peut stocker plusieurs projets</li>
+      </ul>
     </section>
 
     <section>
@@ -116,16 +129,17 @@
       <ul>
         <li class="fragment fade-in">Entity-attribute-value (EAV)</li>
         <li class="fragment fade-in">Transactions</li>
-        <li class="fragment fade-in">Implementation complexe</li>
+        <li class="fragment fade-in">Implémentation complexe</li>
       </ul>
     </section>
 
     <section>
       <img src="img/mongodb.jpg"/>
       <ul>
-        <li class="fragment fade-in">Pas de transactions</li>
-        <li class="fragment fade-in">Implementation ultra simple</li>
+        <li class="fragment fade-in">Implémentation très simple</li>
+        <li class="fragment fade-in">Meilleur gestion des binaires</li>
         <li class="fragment fade-in">Scalable</li>
+        <li class="fragment fade-in">Mais... pas de transactions</li>
       </ul>
     </section>
 
@@ -227,6 +241,10 @@
           </td>
         </tr>
       </table>
+      <aside class="notes">
+        - Decrypte lors de l'import de Onyx
+        - We don't use Servlet Session but Shiro Sessions
+      </aside>
     </section>
 
     <section>
@@ -251,7 +269,7 @@
         <pre><code data-trim>rest:/datasource/datasource_1/table/table_1:*:GET
 rest:/datasource/datasource_1/table/table_1/variables:GET:GET/*
 // so this permission won't be granted
-// rest:/datasource/datasource_1/table/table_1/valueset</code></pre>
+// rest:/datasource/datasource_1/table/table_1/valuesets</code></pre>
       </div>
       <aside class="notes">
         - ACL sur chaque item serait trop lent
@@ -321,7 +339,7 @@ rest:/datasource/datasource_1/table/table_1/variables:GET:GET/*
           }
         ],
         history: true
-//      transition: 'linear'
+        //      transition: 'linear'
       });
 </script>
 
