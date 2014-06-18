@@ -88,10 +88,6 @@
     </section>
 
     <section>
-      <h2>Diagramme ?</h2>
-    </section>
-
-    <section>
       <h2>Confidentialité des participants</h2>
       <img src="img/opal-ids.jpg"/>
       <ul>
@@ -105,7 +101,7 @@
     </section>
 
     <section>
-      <h3>SQL</h3>
+      <h3>Plain SQL</h3>
       <ul class="top">
         <li class="fragment fade-in">BD existante</li>
         <li class="fragment fade-in">Limité</li>
@@ -116,9 +112,10 @@
     </section>
 
     <section>
-      <h3>Hibernate (EAV)</h3>
+      <h3>Hibernate</h3>
       <img src="img/hibernate.png"/>
       <ul>
+        <li class="fragment fade-in">Entity-attribute-value (EAV)</li>
         <li class="fragment fade-in">Transactions</li>
         <li class="fragment fade-in">Implementation complexe</li>
       </ul>
@@ -236,28 +233,31 @@
 
     <section>
       <h2>Spatial realm</h2>
-      <br/><br/>
-      <pre><code data-trim>
-        [{domain}:]{uri}:{action}:{parent-action}/{children-action}
-      </code></pre>
       <br/>
-      <br/>
+      <pre><code data-trim>{domain}:{uri}:{permission}:{parent-permission}/{children-permission}</code></pre>
 
-      <p>Permission EDIT_TABLE</p>
-      <pre><code data-trim>rest:/datasource/datasource_1/table/table_1:PUT:GET
-        rest:/datasource/datasource_1/table/table_1:GET:GET
-        rest:/datasource/datasource_1/table/table_1/variables:POST:GET/*
-        rest:/datasource/datasource_1/table/table_1/variables:DELETE:GET
-        rest:/datasource/datasource_1/table/table_1/variables:GET:GET/GET
-        rest:/datasource/datasource_1/table/table_1/variable:GET:GET/GET</code></pre>
+      <div class="fragment fade-in">
+        <p>
+          <br/>
+          TABLE_ALL permission:
+       </p>
+       <pre><code data-trim>opal:/datasource/datasource_1/table/table_1:ALL</code></pre>
+        <pre><code data-trim>rest:/datasource/datasource_1/table/table_1:*:GET/*</code></pre>
+      </div>
+      <div class="fragment fade-in">
+        <p>
+          <br/>
+          EDIT_VARIABLES permission:
+        </p>
+        <pre><code data-trim>opal:/datasource/datasource_1/table/table_1:EDIT_VARIABLES</code></pre>
+        <pre><code data-trim>rest:/datasource/datasource_1/table/table_1:*:GET
+rest:/datasource/datasource_1/table/table_1/variables:GET:GET/*
+// so this permission won't be granted
+// rest:/datasource/datasource_1/table/table_1/valueset</code></pre>
+      </div>
       <aside class="notes">
         - ACL sur chaque item serait trop lent
       </aside>
-    </section>
-
-    <section>
-      <h2>Confidentialité et anonymisation</h2>
-      TODO
     </section>
 
     <section>
