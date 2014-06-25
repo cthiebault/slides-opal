@@ -26,7 +26,6 @@
       <a href="https://github.com/obiba/opal" target="_blank">https://github.com/obiba/opal</a>
     </section>
 
-
     <section>
 
       <section>
@@ -48,9 +47,9 @@
         <h1>Collecte des données</h1>
         <img src="img/opal-flow.png" class="w500"/>
         <ul>
-          <li class="fragment fade-in">Sources multiple</li>
-          <li class="fragment fade-in">Données hétérogènes</li>
-          <li class="fragment fade-in">Normalise le format des data &amp; metadata</li>
+          <li>Sources multiple</li>
+          <li>Donn&eacute;es h&eacute;t&eacute;rog&egrave;nes</li>
+          <li>Normalise le format des data et metadata</li>
         </ul>
       </section>
 
@@ -63,23 +62,80 @@
       </section>
 
       <section>
-        <h2>Projet (datasource)</h2>
-        <img src="img/opal-projects.png"/>
+        <h2>Table traditionnelle</h2>
+        <img src="img/magma-table.png"/>
+        <ul>
+          <li>Colonne == variable</li>
+          <li>Rangée == value sets pour chaque participant</li>
+          <li>Cellule == valeur pour un participant pour une variable</li>
+        </ul>
       </section>
 
       <section>
-        <h2>Tables</h2>
-        <img src="img/opal-tables.png"/>
+        <h2>Variable</h2>
+        <ul>
+          <li>Décrit en ensemble de valeurs du même type</li>
+          <li>A propos d'une entité (participant, instrument, etc.)</li>
+        </ul>        
       </section>
 
       <section>
-        <h2>Variables</h2>
-        <img src="img/opal-variables.png"/>
+        <h2>Catégorie</h2>
+        <p>Décrit les valeurs possible d'une variable</p>
       </section>
 
       <section>
-        <h2>Catégories et attributs</h2>
-        <img src="img/opal-variable-detail.png"/>
+        <h2>Table</h2>
+        <ul>
+          <li>Contient plusieurs variables</li>
+          <li>Appartient à une datasource</li>
+        </ul>        
+      </section>
+
+      <section>
+        <h2>Datasource (ou projet)</h2>
+        <ul>
+          <li>Contient plusieurs tables</li>
+          <li>Peut être persisté dans une base de donnée, un fichier dépendemment de la configuration de la datasource</li>
+        </ul>  
+      </section>
+
+      <section>
+        <h2>Attribut</h2>
+        <p>Ajoute de la meta information aux catégories, variables et datasources</p>
+        <ul>
+          <li>namespace</li>
+          <li>name</li>
+          <li>locale</li>
+          <li>value</li>
+        </ul> 
+      </section>
+
+      <section>
+        <h2>Variable dérivée</h2>
+        <p>Variable dont les valeurs sont calculées depuis un script (JS)<p>
+      </section>
+
+      <section>
+        <h2>Vue</h2>
+        <ul>
+          <li>Table virtuelle</li>
+          <li>Contient des variables dérivées</li>
+          <li>Sous ensemble de une ou plusieurs tables</li>
+        </ul>         
+      </section>
+
+      <section>
+        <h2>Relations</h2>
+        <img src="img/magma.png"/>
+      </section>
+
+    </section>
+
+    <section>
+
+      <section>
+        <h1>A quoi ça ressemble ?</h1>
       </section>
 
       <section>
