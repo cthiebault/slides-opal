@@ -6,7 +6,7 @@
   margin-top: 0.5em;
 }
 
-p.top {
+p.top, table.top {
   margin-top: 2em;
 }
 

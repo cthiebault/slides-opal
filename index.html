@@ -33,18 +33,30 @@
       </section>
 
       <section>
-        <h1>Base de données</h1>
-        <ul class="top">
-          <li>Etudes épidémiologiques</li>
-          <li>Biobanques</li>
-        </ul>
-        <aside class="notes">
-          - données sur les participants
-        </aside>
+        <h2>Data Manager</h2>
+        <table class="center-middle col-2 top">
+          <tr>
+            <td>
+              <ul>
+                <li>Importe</li>
+                <li>Perstiste</li>
+                <li>Analyse</li>
+                <li>Exporte</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Données sur les participants</li>
+                <li>Etudes épidémiologiques</li>
+                <li>Biobanques</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
       </section>
 
       <section>
-        <h1>Collecte des données</h1>
+        <h2>Collecte des données</h2>
         <img src="img/opal-flow.png" class="w500"/>
         <ul>
           <li>Sources multiple</li>
@@ -58,7 +70,7 @@
     <section>
 
       <section>
-        <h1>Modèle</h1>
+        <h1>Concept et modèle</h1>
       </section>
 
       <section>
@@ -135,16 +147,66 @@
     <section>
 
       <section>
+        <h1>Confidentialité des participants</h1>
+      </section>
+
+      <section>
+        <img src="img/opal-ids.jpg"/>
+        <ul>
+          <li>ID internes à Opal</li>
+          <li>ID persitées dans une DB dédiée</li>
+          <li>Nouvelles ID pour chaque organisation qui accède aux données</li>
+        </ul>
+      </section>
+
+    </section>
+
+    <section>
+
+      <section>
+        <h1>Harmonisation des données</h1>
+      </section>
+
+      <section>
+        <h2>Harmonisation</h2>
+        <img src="img/harmo.png"/>
+      </section>
+
+      <section>
+        <h2>DataSHIELD</h2>
+        <img src="img/datashield.png"/>
+      </section>
+
+      <section>
+        <h2>Harmonisation avec Opal</h2>
+        <ul>
+          <li>Données hébergées par les biobanques<br/>(gestion des droits d'accés)</li>
+          <li>Format normalisé des données harmonisées</li>
+          <li>Sommaire (statistiques) des des données harmonisées disponible en temps réel</li>
+          <li>Analyse statistique en temps réel avec DataSHIELD</li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+
+      <section>
         <h1>A quoi ça ressemble ?</h1>
       </section>
 
       <section>
-        <h2>Données</h2>
-        <img src="img/opal-values.png"/>
-        <aside class="notes">
-          - value set --> read all data (export, indexation)
-          - vecteur --> statistiques
-        </aside>
+        <h2>Tables</h2>
+        <img src="img/opal-tables.png"/>
+      </section>
+
+      <section>
+        <h2>Variable</h2>
+        <img src="img/opal-variable-detail.png"/>
+      </section>
+
+      <section>
+        <h2>Variable dérivée</h2>
+        <img src="img/opal-script.png"/>
       </section>
 
       <section>
@@ -155,20 +217,15 @@
         </aside>
       </section>
 
-      <section>
-        <h2>Vue &amp; variables dérivées</h2>
-        <img src="img/opal-derived.png"/>
-      </section>
-
-      <section>
+<!--       <section>
         <h2>Database</h2>
         <img src="img/opal-db.png"/>
         <ul>
-          <li class="fragment fade-in">Un projet persiste dans une seule BD</li>
-          <li class="fragment fade-in">Une BD peut stocker plusieurs projets</li>
+          <li>Un projet persiste dans une seule BD</li>
+          <li>Une BD peut stocker plusieurs projets</li>
         </ul>
       </section>
-
+ -->
     </section>
 
     <section>
@@ -178,10 +235,10 @@
       </section>
 
       <section>
-        <h3>Plain SQL</h3>
+        <h2>Plain SQL</h2>
         <ul class="top">
-          <li class="fragment fade-in">BD existante</li>
-          <li class="fragment fade-in">Limité</li>
+          <li>BD existante</li>
+          <li>Limité</li>
         </ul>
         <aside class="notes">
           - limitation du nombre de variables (car nb colonnes limité)
@@ -191,39 +248,40 @@
       <section>
         <img src="img/hibernate.png"/>
         <ul>
-          <li class="fragment fade-in">Entity-attribute-value (EAV)</li>
-          <li class="fragment fade-in">Transactions</li>
-          <li class="fragment fade-in">Implémentation complexe</li>
+          <li>Entity-attribute-value (EAV)</li>
+          <li>Transactions</li>
+          <li>Implémentation complexe</li>
         </ul>
       </section>
 
       <section>
         <img src="img/mongodb.jpg"/>
         <ul>
-          <li class="fragment fade-in">Implémentation très simple</li>
-          <li class="fragment fade-in">Meilleur gestion des binaires</li>
-          <li class="fragment fade-in">Scalable</li>
-          <li class="fragment fade-in">Mais... pas de transactions</li>
+          <li>Implémentation très simple</li>
+          <li>Meilleur gestion des binaires</li>
+          <li>Scalable</li>
+          <li>Mais... pas de transactions</li>
         </ul>
       </section>
 
       <section>
-        <h3>Web Services</h3>
+        <h2>Web Services</h2>
         <ul>
-          <li class="fragment fade-in">Opal <--> Opal</li>
-          <li class="fragment fade-in">Import / Export</li>
+          <li>Map une datasource vers un autre Opal</li>
+          <li>Import / Export</li>
         </ul>
       </section>
 
       <section>
-        <h3>Fichiers</h3>
+        <h2>Fichiers</h2>
         <table class="center-middle">
           <tr>
             <td><img src="img/csv.png"/></td>
             <td><img src="img/xml.png"/></td>
+            <td><img src="img/spss.png"/></td>
           </tr>
         </table>
-        <p>Import / Export</p>
+        <p>Utilisé lors de l'import / export</p>
       </section>
 
     </section>
@@ -231,30 +289,17 @@
     <section>
 
       <section>
-        <h1>Architecture Clients / Serveur</h1>
+        <h1>Architecture</h1>
       </section>
 
       <section>
-        TODO diagramme
-        <ul class="top">
-          <li class="fragment fade-in">Serveur REST</li>
-          <li class="fragment fade-in">Client GWT</li>
-          <li class="fragment fade-in">Client Python</li>
-          <li class="fragment fade-in">Client R</li>
-        </ul>
+        <h2>Serveur / Clients</h2>
+        <img src="img/server_client.png"/>
         <aside class="notes">
           - GWT: GWTP + Bootstrap (LESS)
           - Python: script d'automatisation
           - R: DataShield
         </aside>
-      </section>
-
-    </section>
-
-    <section>
-
-      <section>
-        <h1>Architecture Serveur</h1>
       </section>
 
       <section>
@@ -290,9 +335,9 @@
       <section>
         <h2>API REST</h2>
         <ul class="top">
-          <li class="fragment fade-in">JAX RS (RestEasy)</li>
-          <li class="fragment fade-in">Protocol Buffers</li>
-          <li class="fragment fade-in">Documentation de l'API (Swagger)</li>
+          <li>JAX RS (RestEasy)</li>
+          <li>Protocol Buffers</li>
+          <li>Documentation de l'API (Swagger)</li>
         </ul>
         <aside class="notes">
           - Protobuf: format binaire et DTO polyglothe
@@ -309,10 +354,10 @@
             </td>
             <td>
               <ul>
-                <li class="fragment fade-in">Authentication</li>
-                <li class="fragment fade-in">Authorization</li>
-                <li class="fragment fade-in">Cryptography</li>
-                <li class="fragment fade-in">Session management</li>
+                <li>Authentication</li>
+                <li>Authorization</li>
+                <li>Cryptography</li>
+                <li>Session management</li>
               </ul>
             </td>
           </tr>
@@ -324,20 +369,11 @@
       </section>
 
       <section>
-        <h2>Confidentialité des participants</h2>
-        <img src="img/opal-ids.jpg"/>
-        <ul>
-          <li class="fragment fade-in">ID internes</li>
-          <li class="fragment fade-in">Nouvelles ID pour chaque organisation qui accède aux données</li>
-        </ul>
-      </section>
-
-      <section>
         <h2>Spatial realm</h2>
         <br/>
         <pre><code data-trim>{domain}:{uri}:{permission}:{parent-permission}/{children-permission}</code></pre>
 
-        <div class="fragment fade-in">
+        <div>
           <p>
             <br/>
             TABLE_ALL permission:
@@ -345,7 +381,7 @@
           <pre><code data-trim>opal:/datasource/datasource_1/table/table_1:ALL</code></pre>
           <pre><code data-trim>rest:/datasource/datasource_1/table/table_1:*:GET/*</code></pre>
         </div>
-        <div class="fragment fade-in">
+        <div>
           <p>
             <br/>
             EDIT_VARIABLES permission:
@@ -371,9 +407,9 @@
             </td>
             <td>
               <ul>
-                <li class="fragment fade-in">Rechercher</li>
-                <li class="fragment fade-in">Facets / Aggrégations</li>
-                <li class="fragment fade-in">Cluster</li>
+                <li>Rechercher</li>
+                <li>Facets / Aggrégations</li>
+                <li>Cluster</li>
               </ul>
             </td>
           </tr>
@@ -385,8 +421,8 @@
         <img src="img/opal-script.png"/>
         <table class="center-middle">
           <tr>
-            <td><img src="img/rhino.jpg" class="fragment fade-in w300"/></td>
-            <td><img src="img/git-red.png" class="fragment fade-in w300"/></td>
+            <td><img src="img/rhino.jpg" class="w300"/></td>
+            <td><img src="img/git-red.png" class="w300"/></td>
           </tr>
         </table>
       </section>
